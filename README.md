@@ -1,6 +1,6 @@
 # Prueba técnica en Next.js / React.js + JavaScript + TailwindCSS + ESLint
 
-## Instrucciones
+## Instrucciones para correr el proyecto
 
 1. Clonar el repositorio desde HTTPS, SSH, etc...
 ```
@@ -22,3 +22,6 @@ bun dev
 ```
 
 4. Abrir [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+## Proyecto en línea desplegado en Vercel
+[Ir a prueba-tecnica-trc.vercel.app](https://prueba-tecnica-trc.vercel.app/)
