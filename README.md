@@ -1,4 +1,4 @@
-# Prueba técnica en Next.js / React.js + JavaScript + ESLint
+# Prueba técnica en Next.js / React.js + JavaScript + TailwindCSS + ESLint
 
 ## Instrucciones
 
