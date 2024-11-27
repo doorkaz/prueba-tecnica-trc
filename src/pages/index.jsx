@@ -40,9 +40,11 @@ export default function Home () {
           {/* Buscador de cursos, se reutiliza el diseño del input de las bases en desarrollo */}
           <div className='flex w-full justify-end'>
             <input
+              name='course'
               placeholder='Buscar curso...'
               className='w-full my-1 max-w-[300px] appearance-none border border-button-dark-border rounded py-2 pl-6 pr-4 text-gray-300 bg-secondary-dark h-12 cursor-pointer'
               type='search'
+              autoComplete='none'
               value={searched}
               onChange={handleSearchChange}
             />
