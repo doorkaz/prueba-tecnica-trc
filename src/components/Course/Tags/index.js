@@ -1,1 +1,1 @@
-export * from './CourseTag'
+export { CourseTag } from './CourseTag'
