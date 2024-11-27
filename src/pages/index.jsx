@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Card, Navbar } from '@/components'
 import { useFetchAndLoad } from '@/hooks'
 import { getCourses } from '@/services'
+import { getFilteredCoursesByTitle } from '@/utilities'
 
 export default function Home () {
   const [courses, setCourses] = useState(null)
@@ -13,16 +14,6 @@ export default function Home () {
 
   // Guarda el input de búsqueda
   const handleSearchChange = (e) => setSearched(e.target.value)
-
-  // Filtra los cursos por titulo según el input de búsqueda
-  const filteredCourses = courses && courses.filter((course) => {
-    // Limpia los espacios en blanco del titulo buscado y el titulo del curso y filtra con regex
-    const searchedCourseTitle = searched.trim().replace(/\s+/g, ' ').toLowerCase()
-    const courseTitle = course.title.trim().replace(/\s+/g, ' ').toLowerCase()
-
-    // Busca los titulos del curso que hagan match con el curso buscado
-    return courseTitle.includes(searchedCourseTitle)
-  })
 
   useEffect(() => {
     // Almacena directamente en el estado el array de cursos
@@ -56,9 +47,11 @@ export default function Home () {
             ? 'Cargando...'
             : courses && (
               <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full'>
-                {filteredCourses.map((course) => (
-                  <Card key={course.id} props={course} />
-                ))}
+                {
+                  getFilteredCoursesByTitle(courses, searched).map((course) => (
+                    <Card key={course.id} props={course} />
+                  ))
+                }
               </div>
             )
         }
